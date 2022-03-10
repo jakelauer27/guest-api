@@ -404,10 +404,12 @@ components:
           example: "123456"
           nullable: true
         mailingAddress:
-          $ref: '#/components/schemas/Address'
+          allOf: 
+            - $ref: '#/components/schemas/Address'
           nullable: true
         billingAddress:
-          $ref: '#/components/schemas/Address'
+          allOf: 
+            - $ref: '#/components/schemas/Address'
           nullable: true
     Address:
       type: object
@@ -546,7 +548,12 @@ components:
           allOf:
             - $ref: '#/components/schemas/BlockedStatus'
           nullable: true
+        additionalInformation:
+          type: "array"
+          items:
+            $ref: '#/components/schemas/AdditionalInformation'
         files:
           type: "array"
           items:
             $ref: '#/components/schemas/File'
+
