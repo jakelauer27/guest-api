@@ -203,7 +203,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/AdditionalInformation'
+                  $ref: '#/components/schemas/AdditionalInformationEntry'
     post:
       tags:
       - additionalInformation
@@ -551,7 +551,7 @@ components:
         additionalInformation:
           type: "array"
           items:
-            $ref: '#/components/schemas/AdditionalInformation'
+            $ref: '#/components/schemas/AdditionalInformationEntry'
         files:
           type: "array"
           items:
