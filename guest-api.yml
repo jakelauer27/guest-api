@@ -1,4 +1,4 @@
-swagger: "2.0"
+openapi: "3.0.1"
 info:
   description: "This is an api for CRUD operations on a park Guest.  parkId is included in the base path of every route to scope the request to a certain park"
   version: "0.0.1"
