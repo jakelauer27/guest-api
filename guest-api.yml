@@ -410,13 +410,13 @@ definitions:
         type: "string"
         example: "John Doe"
       address1:
-        nullable: true
         type: "string"
         example: "123 Main St"
-      address2:
         nullable: true
+      address2:
         type: "string"
         example: "Apt 2"
+        nullable: true
       city:
         type: "string"
         example: "Denver"
@@ -424,9 +424,9 @@ definitions:
         type: "string"
         example: "CO"
       postalCode:
-        nullable: true
         type: "string"
         example: "80022"
+        nullable: true
       country:
         type: "string"
         example: "USA"
@@ -493,7 +493,7 @@ definitions:
         maximum: 4
         type: "integer"
         format: "int32"
-        expample: 3
+        example: 3
       slideoutName:
         type: "string"
         example: "Passenger Side"
