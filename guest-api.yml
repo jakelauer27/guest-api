@@ -394,10 +394,12 @@ definitions:
       yogiId:
         type: "string"
         example: "123456"
-      addresses:
-        type: "array"
-        items:
-          $ref: "#/definitions/Address"
+      mailingAddress:
+        nullable: true
+        $ref: "#/definitions/Address"
+      billingAddress:
+        nullable: true
+        $ref: "#/definitions/Address"
   Address:
     type: "object"
     properties:
@@ -406,11 +408,13 @@ definitions:
         format: "int64"
       name:
         type: "string"
-        example: "home"
+        example: "John Doe"
       address1:
+        nullable: true
         type: "string"
         example: "123 Main St"
       address2:
+        nullable: true
         type: "string"
         example: "Apt 2"
       city:
@@ -420,11 +424,12 @@ definitions:
         type: "string"
         example: "CO"
       postalCode:
+        nullable: true
         type: "string"
         example: "80022"
       country:
         type: "string"
-        example: "United States"
+        example: "USA"
       type:
         type: "string"
         description: "address type"
@@ -442,10 +447,10 @@ definitions:
     properties:
       key:
         type: "string"
-        example: "notes"
+        example: "Customer Import Note"
       value:
         type: "string"
-        example: "They were the best guest ever"
+        example: "They were the best guest import ever"
   BlockedStatus:
     type: "object"
     properties:
@@ -477,6 +482,27 @@ definitions:
       cardExpiration:
         type: "string"
         example: "10/2040"
+  RvProfile:
+    type: "object"
+    properties: 
+      length:
+        type: "integer"
+        format: "int32"
+      slideoutValue:
+        minimum: 1
+        maximum: 4
+        type: "integer"
+        format: "int32"
+        expample: 3
+      slideoutName:
+        type: "string"
+        example: "Passenger Side"
+      rvTypeId: 
+        type: "integer"
+        format: "int32"
+      rvTypeName:
+        type: "string"
+        example: "Pop-up"
   File:
     type: "object"
     properties:
@@ -500,14 +526,17 @@ definitions:
       id:
         type: "integer"
         format: "int64"
+      rvProfiles: 
+        type: "array",
+        items: 
+          $ref: "#/definitions/RvProfile
       paymentCards:
         type: "array"
         items:
           $ref: "#/definitions/PaymentCard"
-      blockedStatuses:
-        type: "array"
-        items:
-          $ref: "#/definitions/PaymentCard"
+      blockedStatus:
+          $ref: "#/definitions/BlockedStatus"
+          nullable: true
       files:
         type: "array"
         items:
