@@ -1,4 +1,4 @@
-openapi: "3.0.1"
+swagger: "2.0"
 info:
   description: "This is an api for CRUD operations on a park Guest.  parkId is included in the base path of every route to scope the request to a certain park"
   version: "0.0.1"
@@ -412,11 +412,9 @@ definitions:
       address1:
         type: "string"
         example: "123 Main St"
-        nullable: true
       address2:
         type: "string"
         example: "Apt 2"
-        nullable: true
       city:
         type: "string"
         example: "Denver"
@@ -426,7 +424,6 @@ definitions:
       postalCode:
         type: "string"
         example: "80022"
-        nullable: true
       country:
         type: "string"
         example: "USA"
