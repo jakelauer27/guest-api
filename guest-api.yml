@@ -529,7 +529,7 @@ definitions:
       rvProfiles: 
         type: "array"
         items: 
-          $ref: "#/definitions/RvProfile
+          $ref: "#/definitions/RvProfile"
       paymentCards:
         type: "array"
         items:
