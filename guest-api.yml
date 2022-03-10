@@ -527,7 +527,7 @@ definitions:
         type: "integer"
         format: "int64"
       rvProfiles: 
-        type: "array",
+        type: "array"
         items: 
           $ref: "#/definitions/RvProfile
       paymentCards:
